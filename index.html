@@ -12,25 +12,28 @@
     <div id="screen">
         <div id="game_box">
             <div id="game_screen">
-                <h2>JavaScript Tetris</h2>
-                    <canvas id="canvas"
-                            width="432"
-                            height="528"
-                            style="border:0px solid #000000;">
-                    </canvas>
+                <h2>Welcome to Tetris Canvas</h2>
+                <canvas id="canvas" width="432px" height="528px" style="border:0px solid #000000;">
+                </canvas>
             </div>
         </div>
-        
-        <div id="instructions">
-            <h2>Instructions</h2>
-            <ul>
-                <li><b>UP ARROW</b> = Rotate Tetrominoe</li></br>
-                <li><b>LEFT ARROW</b> = Tetrominoe Left</li></br>
-                <li><b>RIGHT ARROW</b> = Tetrominoe Right</li></br>
-                <li><b>DOWN ARROW</b> = Tetrominoe down one spot</li></br>
-                <li><b>SPACE BAR</b> = Send Tetrominoe to the bottom</li></br></br>
-                <li><b><span id="score">SCORE: 0</span></b></li>
-            </ul>
+            
+        <div id="startGame">
+            <p>Instructions:</p>
+            <p>Press "UP Arrow" to rotate Tetrominoe</p>
+            <p>Press "LEFT Arrow" to slide left</p>
+            <p>Press "RIGHT Arrow" to slide right</p>
+            <p>Press "DOWN Arrow" to go down</p>
+            <p>Press "SPACE" to send to bottom</p>
+  
+            <button class="button">Start Game</button>
+        </div>
+
+        <div id="score">
+            <b><span id="score">SCORE: 0</span></b> 
+            
+            <button onclick="detailedInstructions()" style="margin-top: 20px;">Detailed Instructions</button>
+            <p id="demo"></p>
         </div>
     </div>
     

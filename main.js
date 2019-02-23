@@ -3,7 +3,10 @@ var W = 432;
 var H = 528;
 var X = 0;
 var Y = 0;
-ITER = 0;
+var gameStart;
+const startMenu = document.getElementById("startGame");
+const startBtn = document.querySelector("#startGame button");
+iteration = 0;
 var canvas = document.getElementById("canvas");
 var c = canvas.getContext("2d");
 c.fillStyle="#000000";
@@ -34,26 +37,26 @@ function Tetro(imgSrc, xBound1, yBound1, xBound2, yBound2, xBound3, yBound3) {
     this.boundaryPoints = [ xBound1, yBound1, xBound2, yBound2, xBound3, yBound3 ]  
 }
 
-var tetroO = new Tetro("images/tetro_o.png", 12, 48, 36, 48, 36, 48);
-var tetroT = new Tetro("images/tetro_t.png", 12, 48, 36, 48, 60, 48);
-var tetroT1 = new Tetro("images/tetro_t1.png", 12, 48, 36, 72, 36, 72);
-var tetroT2 = new Tetro("images/tetro_t2.png", 12, 24, 36, 48, 60, 24);
-var tetroT3 = new Tetro("images/tetro_t3.png", 12, 72, 36, 48, 36, 48);
-var tetroI = new Tetro("images/tetro_i.png", 12, 96, 12, 96, 12, 96);
-var tetroI1 = new Tetro("images/tetro_i1.png", 12, 24, 36, 24, 84, 24);
-var tetroJ = new Tetro("images/tetro_j.png", 12, 48, 36, 48, 60, 48);
-var tetroJ1 = new Tetro("images/tetro_j1.png", 12, 72, 36, 72, 12, 72);
-var tetroJ2 = new Tetro("images/tetro_j2.png", 12, 24, 36, 24, 60, 48);
-var tetroJ3 = new Tetro("images/tetro_j3.png", 12, 72, 36, 24, 36, 24);
-var tetroL = new Tetro("images/tetro_l.png", 12, 48, 36, 48, 60, 48);
-var tetroL1 = new Tetro("images/tetro_l1.png", 12, 24, 36, 72, 36, 72);
-var tetroL2 = new Tetro("images/tetro_l2.png", 12, 48, 36, 24, 60, 24);
-var tetroL3 = new Tetro("images/tetro_l3.png", 12, 72, 36, 72, 36, 72);
-var tetroZ = new Tetro("images/tetro_z.png", 12, 24, 36, 48, 60, 48);
-var tetroZ1 = new Tetro("images/tetro_z1.png", 12, 72, 36, 48, 36, 48);
-var tetroS = new Tetro("images/tetro_s.png", 12, 48, 36, 48, 60, 24);
-var tetroS1 = new Tetro("images/tetro_s1.png", 12, 48, 36, 72, 36, 72);
-var currTetro = new Tetro("images/tetro_o.png", 12, 48, 36, 48, 36, 48)
+var tetroO = new Tetro("images/tetromino_o.png", 12, 48, 36, 48, 36, 48);
+var tetroT = new Tetro("images/tetromino_t.png", 12, 48, 36, 48, 60, 48);
+var tetroT1 = new Tetro("images/tetromino_t1.png", 12, 48, 36, 72, 36, 72);
+var tetroT2 = new Tetro("images/tetromino_t2.png", 12, 24, 36, 48, 60, 24);
+var tetroT3 = new Tetro("images/tetromino_t3.png", 12, 72, 36, 48, 36, 48);
+var tetroI = new Tetro("images/tetromino_i.png", 12, 96, 12, 96, 12, 96);
+var tetroI1 = new Tetro("images/tetromino_i1.png", 12, 24, 36, 24, 84, 24);
+var tetroJ = new Tetro("images/tetromino_j.png", 12, 48, 36, 48, 60, 48);
+var tetroJ1 = new Tetro("images/tetromino_j1.png", 12, 72, 36, 72, 12, 72);
+var tetroJ2 = new Tetro("images/tetromino_j2.png", 12, 24, 36, 24, 60, 48);
+var tetroJ3 = new Tetro("images/tetromino_j3.png", 12, 72, 36, 24, 36, 24);
+var tetroL = new Tetro("images/tetromino_l.png", 12, 48, 36, 48, 60, 48);
+var tetroL1 = new Tetro("images/tetromino_l1.png", 12, 24, 36, 72, 36, 72);
+var tetroL2 = new Tetro("images/tetromino_l2.png", 12, 48, 36, 24, 60, 24);
+var tetroL3 = new Tetro("images/tetromino_l3.png", 12, 72, 36, 72, 36, 72);
+var tetroZ = new Tetro("images/tetromino_z.png", 12, 24, 36, 48, 60, 48);
+var tetroZ1 = new Tetro("images/tetromino_z1.png", 12, 72, 36, 48, 36, 48);
+var tetroS = new Tetro("images/tetromino_s.png", 12, 48, 36, 48, 60, 24);
+var tetroS1 = new Tetro("images/tetromino_s1.png", 12, 48, 36, 72, 36, 72);
+var currTetro = new Tetro("images/tetromino_o.png", 12, 48, 36, 48, 36, 48)
 
 function rotateTetro() {
     if (currTetro == tetroJ) {
@@ -114,7 +117,7 @@ function detectCollision() {
         rowCheck();
         resetTetro();
         copyCanvas();
-        ITER++;
+        iteration++;
     }
 }
 
@@ -174,9 +177,9 @@ function randomizeTetro() {
     var randomTetro = Math.floor(Math.random()*7);
     return storedT[randomTetro];
 }
+// 
 
-var gameStart = setInterval(updateGameState, 1000 / fps);
-
+// 
 function updateGameState() {
     drawCanvas();
     copyCanvas();
@@ -208,7 +211,7 @@ function dropDownTetro() {
             rowCheck();
             copyCanvas();
             resetTetro();
-            ITER++;
+            iteration++;
         }
     }
 }
@@ -234,5 +237,14 @@ function storeKey(ev) {
             }
         }
 
+//start game when button is clicked.
+startBtn.addEventListener("click", () => {
+    console.log("clicked");
+    gameStart = setInterval(updateGameState, 1000 / fps); // this will start the game
+    startMenu.style.display = "none";
+});
 
+function detailedInstructions() {
+    document.getElementById("demo").innerHTML = "The primary way to score points in Tetris is to clear lines by manipulating the pieces so that they fill horizontal row within the Matrix. As the pieces fall, your goal is to move and spin them so that they line up evenly at the bottom of the Matrix. To clear a line, every square of the row has to be filled. </br> </br> Tip: Fill in multiple lines at once for bonus points. Drop Tetriminos so that there is a gap at least two squares deep, then drop a J-Tetrimino or L-Tetrimino to clear two lines at once, for example.";
+  }
     

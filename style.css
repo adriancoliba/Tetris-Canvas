@@ -1,7 +1,7 @@
 #game_screen {
-    width:          434px;
-    margin:         0px 0px;
-    padding:        0px;
+    width: 434px;
+    margin: 0px 0px;
+    padding: 0px;
 }
 
 #game_box {
@@ -12,18 +12,34 @@
 }
 
 h2 {
-    text-align:     center;
-    padding:        0px 0px 10px 0px;
-    margin:         0px;
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+    margin: 0px;
 }
 
-#instructions {
+#score {
     float: right;
     width: 350px;
-    margin: 0px auto 0px 0px;
+    margin: 100px auto 0px 0px;
 }
 
 #screen {
     width: 900px;
-    margin: 0px auto;
+    margin: 50px auto;
+    margin-left: 200px;
+}
+/*  */
+#startGame {
+    margin: auto;
+    color: white;
+    background: rgb(0, 0, 0);
+    width: 434px;
+    height: 558px;
+    margin-top: 38px;
+    border-radius: 5px;
+    padding: 0px;
+    font-size: 1.25em;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
 }
