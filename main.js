@@ -244,7 +244,7 @@ startBtn.addEventListener("click", () => {
     startMenu.style.display = "none";
 });
 
-function detailedInstructions() {
+function buttonInstructions() {
     document.getElementById("demo").innerHTML = "The primary way to score points in Tetris is to clear lines by manipulating the pieces so that they fill horizontal row within the Matrix. As the pieces fall, your goal is to move and spin them so that they line up evenly at the bottom of the Matrix. To clear a line, every square of the row has to be filled. </br> </br> Tip: Fill in multiple lines at once for bonus points. Drop Tetriminos so that there is a gap at least two squares deep, then drop a J-Tetrimino or L-Tetrimino to clear two lines at once, for example.";
   }
     

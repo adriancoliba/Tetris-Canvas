@@ -31,7 +31,7 @@ h2 {
 /*  */
 #startGame {
     margin: auto;
-    color: white;
+    color: rgb(250, 250, 249);
     background: rgb(0, 0, 0);
     width: 434px;
     height: 558px;
