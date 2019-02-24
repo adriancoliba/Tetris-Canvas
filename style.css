@@ -85,7 +85,7 @@ h1 {
 #score {
     float: right;
     width: 350px;
-    margin: 100px auto 0px 0px;
+    margin: 30px auto 0px 0px;
     font-family: 'Press Start 2P', cursive;
 }
 #restart {
@@ -95,7 +95,8 @@ h1 {
 }
 #github {
     font-family: 'Press Start 2P', cursive;
-    margin-top: 15px;
+    margin-top: 17px;
+
 }
 #restart:hover, #detailedInstructions:hover, #github:hover {
     cursor: pointer;
@@ -107,6 +108,11 @@ h1 {
 }
 #demo {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#tutorial-gif {
+    margin-top: 20px; 
+    font-family: 'Press Start 2P', cursive;
+    padding: 5px;
 }
 
 #screen {

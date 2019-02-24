@@ -243,7 +243,17 @@ startBtn.addEventListener("click", () => {
 
 function buttonInstructions() {
     document.getElementById("demo").innerHTML = "The primary way to score points in <b>Tetris</b> is to clear lines by manipulating the pieces so that they fill horizontal row within the Matrix. As the pieces fall, your goal is to move and spin them so that they line up evenly at the bottom of the Matrix. To clear a line, every square of the row has to be filled. </br> </br> <b>Tip</b>: Fill in multiple lines at once for bonus points. Drop Tetriminos so that there is a gap at least two squares deep, then drop a J-Tetrimino or L-Tetrimino to clear two lines at once, for example.";
-  }
+  };
+function showTutorial() {
+    let showTutorial = document.getElementById("show-tutorial")
+    showTutorial.style.display = "block";
+
+    function hideTutorial(){
+        showTutorial.style.display = "none";
+    }
+    window.setTimeout("hideTutorial()", 20000);
+    
+}
 
 document.querySelector(".github-button").onclick = function () {
     window.open("https://github.com/adriancoliba/Tetris-Canvas", "_blank")
