@@ -91,9 +91,13 @@ h1 {
 #restart {
     font-family: 'Press Start 2P', cursive;
     margin-top: 15px;
-    padding: 5px;
+    padding: 7px;
 }
-#restart:hover, #detailedInstructions:hover {
+#github {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 15px;
+}
+#restart:hover, #detailedInstructions:hover, #github:hover {
     cursor: pointer;
 }
 #detailedInstructions{

@@ -3,9 +3,10 @@
     
     <head>
         <meta charset="utf-8">
-        <title>Tetris Canvas</title>
+        <title>JS Tetris</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     
     <body onkeydown="storeKey(event)">
@@ -21,7 +22,7 @@
             
         <div id="startGame">
             <div id="instructions">
-                <div id="tetris-logo">TETRIS</div>
+                <div id="tetris-logo">JS'TETRIS</div>
                 </br>
                 </br>
                 <p>INSTRUCTIONS:</p>
@@ -38,7 +39,7 @@
         <div id="score">
             <b><span id="score">SCORE: 0</span></b> </br>
             <button id="restart" onClick="window.location.reload()">Restart Game</button>
-            <button id="restart" class="github-button">Github code</button>
+            <button id="github" class="github-button"><i class="fa fa-github" style="font-size:24px"></i> Github code</button> 
             <button id="detailedInstructions" onclick="buttonInstructions()">Detailed Instructions</button>
             <p id="demo"></p>
 
