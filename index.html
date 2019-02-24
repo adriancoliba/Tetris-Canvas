@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Tetris Canvas</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     </head>
     
     <body onkeydown="storeKey(event)">
@@ -12,27 +13,33 @@
     <div id="screen">
         <div id="game_box">
             <div id="game_screen">
-                <h2>Welcome to Tetris Canvas</h2>
-                <canvas id="canvas" width="432px" height="528px" style="border:0px solid #000000;">
+                <h1>Welcome</h1>
+                <canvas id="canvas" width="432px" height="528px">
                 </canvas>
             </div>
         </div>
             
         <div id="startGame">
-            <p>Instructions:</p>
-            <p>Press "UP Arrow" to rotate Tetrominoe</p>
-            <p>Press "LEFT Arrow" to slide left</p>
-            <p>Press "RIGHT Arrow" to slide right</p>
-            <p>Press "DOWN Arrow" to go down</p>
-            <p>Press "SPACE" to send to bottom</p>
-  
-            <button class="button">Start Game</button>
+            <div id="instructions">
+                <div id="tetris-logo">TETRIS</div>
+                </br>
+                </br>
+                <p>INSTRUCTIONS:</p>
+                <p>Press <span class='keys'>"UP Arrow"</span> to rotate Tetrominoe</p>
+                <p>Press <span class='keys'>"LEFT Arrow"</span> to slide left</p>
+                <p>Press <span class='keys'>"RIGHT Arrow"</span> to slide right</p>
+                <p>Press <span class='keys'>"DOWN Arrow"</span> to go down</p>
+                <p>Press <span class='keys'>"SPACE"</span> to send to bottom</p>
+                </br>
+                <button class="button">Start Game</button>
+            </div>
         </div>
 
         <div id="score">
-            <b><span id="score">SCORE: 0</span></b> 
+            <b><span id="score">SCORE: 0</span></b> </br>
+            <button id="restart" onClick="window.location.reload()">Restart Game</button>
             
-            <button onclick="buttonInstructions()" style="margin-top: 20px;">Detailed Instructions</button>
+            <button id="detailedInstructions" onclick="buttonInstructions()">Detailed Instructions</button>
             <p id="demo"></p>
         </div>
     </div>

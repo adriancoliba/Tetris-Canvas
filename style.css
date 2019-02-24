@@ -1,7 +1,9 @@
+
 #game_screen {
     width: 434px;
     margin: 0px 0px;
     padding: 0px;
+    
 }
 
 #game_box {
@@ -10,23 +12,98 @@
     margin: 0px 0px 0px auto;
     float: left;
 }
+#canvas {
+    border: 0px solid #000000;
+}
 
-h2 {
+h1 {
     text-align: center;
     padding: 0px 0px 10px 0px;
     margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#instructions {
+    margin-top: 110px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(192, 192, 192)
+}
+/* TETRIS LOGO animation */
+#tetris-logo {
+    font-family: 'Press Start 2P', cursive;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+    animation: blink 1s steps(4, start) infinite;
+}
+@-moz-keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-o-keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+/* FINISH TETRIS LOGO animation */
 
+.button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 5px;
+
+}
+.keys{
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70%;
+    text-shadow: 0 0 7px rgb(250, 206, 64);
+
+}
 #score {
     float: right;
     width: 350px;
     margin: 100px auto 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+}
+#restart {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 15px;
+    padding: 5px;
+}
+#detailedInstructions{
+    margin-top: 20px; 
+    font-family: 'Press Start 2P', cursive;
+    padding: 5px
+}
+#demo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 #screen {
     width: 900px;
-    margin: 50px auto;
-    margin-left: 200px;
+    margin: 110px auto;
+    margin-left: 170px;
 }
 /*  */
 #startGame {
@@ -43,3 +120,4 @@ h2 {
     z-index: 1000;
     text-align: center;
 }
+
